@@ -1,0 +1,280 @@
+/* app/components/hero/HeroSection.module.css */
+
+.heroSection {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0b2a4a 0%, #1a3f5f 100%);
+  color: white;
+  border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.heroSection::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at 20% 50%,
+    rgba(255, 215, 0, 0.05) 0%,
+    transparent 50%
+  );
+  pointer-events: none;
+}
+
+.heroContainer {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.heroSplit {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s ease-out, opacity 0.2s ease-out;
+  will-change: transform, opacity;
+  position: relative;
+  z-index: 2;
+  transform: translateX(0); /* add this */
+  opacity: 1; /* add this */
+}
+
+/* Left side - Text */
+.heroLeft {
+  background: transparent;
+  backdrop-filter: blur(0);
+}
+
+.heroContent {
+  max-width: 600px;
+  padding: 0 4rem;
+  animation: fadeInUp 1s ease-out;
+}
+
+.heroSubtitle {
+  display: inline-block;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #ffd700;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  position: relative;
+  padding-left: 2rem;
+}
+
+.heroSubtitle::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.5rem;
+  height: 2px;
+  background: #ffd700;
+}
+
+.heroTitle {
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(to right, #ffffff, #ffd700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 2px 10px rgba(255, 215, 0, 0.3);
+}
+
+.heroDescription {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2.5rem;
+  max-width: 500px;
+}
+
+.heroCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  background: #ffd700;
+  color: #0b2a4a;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-radius: 4px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.heroCta::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition:
+    width 0.6s,
+    height 0.6s;
+}
+
+.heroCta:hover {
+  background: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.3);
+}
+
+.heroCta:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.ctaArrow {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+.heroCta:hover .ctaArrow {
+  transform: translateX(5px);
+}
+
+/* Right side - Image */
+.heroRight {
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroImageWrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  animation: zoomIn 1.5s ease-out;
+  transition: transform 0.5s ease;
+}
+
+.heroImageWrapper:hover .heroImage {
+  transform: scale(1.05);
+}
+
+.heroImageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(11, 42, 74, 0.3) 0%,
+    transparent 20%,
+    transparent 80%,
+    rgba(11, 42, 74, 0.3) 100%
+  );
+  pointer-events: none;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .heroContainer {
+    flex-direction: column;
+  }
+
+  .heroSplit {
+    flex: none;
+    height: 70vh;
+  }
+
+  .heroLeft {
+    align-items: flex-end;
+    padding-bottom: 2rem;
+  }
+
+  .heroRight {
+    align-items: flex-start;
+  }
+
+  .heroContent {
+    padding: 0 2rem;
+    text-align: center;
+  }
+
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+
+  .heroDescription {
+    font-size: 1rem;
+  }
+
+  .heroSubtitle {
+    padding-left: 0;
+  }
+
+  .heroSubtitle::before {
+    display: none;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .heroSection {
+    background: linear-gradient(135deg, #0a1929 0%, #0b2a4a 100%);
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .heroSplit,
+  .heroCta,
+  .heroImage,
+  .heroContent {
+    animation: none;
+    transition: none;
+  }
+}

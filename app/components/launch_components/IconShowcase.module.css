@@ -1,0 +1,280 @@
+/* app/components/icons/IconShowcase.module.css */
+
+.showcaseContainer {
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  min-height: 100vh;
+}
+
+.showcaseHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.showcaseTitle {
+  font-size: 2.5rem;
+  color: #0B2A4A;
+  margin: 0;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.titleAccent {
+  color: #FFD700;
+  position: relative;
+}
+
+.titleAccent::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #FFD700;
+  border-radius: 3px;
+}
+
+.colorSelector {
+  display: flex;
+  gap: 1rem;
+  background: white;
+  padding: 0.5rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.colorBtn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: transparent;
+  color: #666;
+}
+
+.colorBtn.active {
+  background: #0B2A4A;
+  color: white;
+}
+
+.colorBtn:hover:not(.active) {
+  background: #f0f0f0;
+}
+
+.iconGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.iconCard {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.iconCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 40px rgba(11, 42, 74, 0.1);
+  border-color: #FFD700;
+}
+
+.iconCard.hovered {
+  transform: scale(1.02);
+}
+
+.iconWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100px;
+  transition: transform 0.3s ease;
+}
+
+.iconCard:hover .iconWrapper {
+  transform: scale(1.05);
+}
+
+.iconInfo {
+  text-align: center;
+}
+
+.iconName {
+  font-size: 1.25rem;
+  color: #0B2A4A;
+  margin: 0 0 0.5rem 0;
+  font-weight: 700;
+}
+
+.iconCategory {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: #FFD700;
+  color: #0B2A4A;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.75rem;
+}
+
+.iconDescription {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.iconOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(11, 42, 74, 0.95);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.useIconBtn {
+  padding: 1rem 2rem;
+  background: #FFD700;
+  color: #0B2A4A;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  transform: translateY(20px);
+  animation: slideUp 0.3s ease forwards 0.1s;
+}
+
+@keyframes slideUp {
+  to {
+    transform: translateY(0);
+  }
+}
+
+.useIconBtn:hover {
+  background: white;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(255, 215, 0, 0.3);
+}
+
+.codeSection {
+  background: #0B2A4A;
+  border-radius: 20px;
+  padding: 2rem;
+  margin-top: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.codeSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #FFD700, transparent);
+}
+
+.codeTitle {
+  color: #FFD700;
+  font-size: 1.5rem;
+  margin: 0 0 1.5rem 0;
+}
+
+.codeBlock {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  overflow-x: auto;
+}
+
+.codeBlock code {
+  color: white;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .showcaseContainer {
+    padding: 2rem 1rem;
+  }
+
+  .showcaseHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .showcaseTitle {
+    font-size: 2rem;
+  }
+
+  .colorSelector {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .iconGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .iconCard {
+    padding: 1.5rem;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .showcaseContainer {
+    background: #1a1a1a;
+  }
+
+  .iconCard {
+    background: #2d2d2d;
+    border-color: #404040;
+  }
+
+  .iconName {
+    color: white;
+  }
+
+  .iconDescription {
+    color: #aaa;
+  }
+}

@@ -1,0 +1,19 @@
+/* app/components/icons/DrawingIcons.module.css */
+
+.drawingIcon {
+  display: block;
+  filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.15));
+  transition: filter 0.3s ease;
+}
+
+.drawingIcon:hover {
+  filter: drop-shadow(0 0 25px rgba(255, 215, 0, 0.3));
+}
+
+/* For debugging - shows the drawing area */
+.drawingIcon path,
+.drawingIcon circle,
+.drawingIcon rect,
+.drawingIcon line {
+  vector-effect: non-scaling-stroke;
+}

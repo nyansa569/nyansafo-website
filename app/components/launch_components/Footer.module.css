@@ -1,0 +1,635 @@
+/* app/components/footer/Footer.module.css */
+
+.footer {
+  background: linear-gradient(135deg, #1A1F36 0%, #2A2F45 100%);
+  color: #FFFFFF;
+  position: relative;
+  font-family: inherit;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ============= MAIN FOOTER ============= */
+.mainFooter {
+  padding: 4rem 0 3rem;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1.5fr 2.5fr 2fr;
+  gap: 3rem;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* Brand Section */
+.brandSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.02);
+}
+
+.logoIcon {
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 107, 107, 0.1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  border: 1px solid rgba(255, 107, 107, 0.3);
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+}
+
+.logoName {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: white;
+  letter-spacing: 2px;
+  line-height: 1.2;
+}
+
+.logoTagline {
+  font-size: 0.7rem;
+  color: #FF6B6B;
+  letter-spacing: 1px;
+  opacity: 0.9;
+}
+
+.brandDescription {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  max-width: 300px;
+}
+
+/* Social Links */
+.socialLinks {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.socialLink {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.socialLink:hover {
+  background: var(--social-color, #FF6B6B);
+  transform: translateY(-3px);
+  border-color: transparent;
+}
+
+/* App Badges */
+.appBadges {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.appBadge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  text-decoration: none;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.appBadge:hover {
+  background: var(--app-color, #FF6B6B);
+  transform: translateY(-2px);
+  border-color: transparent;
+}
+
+.appIcon {
+  font-size: 1.5rem;
+}
+
+.appText {
+  display: flex;
+  flex-direction: column;
+}
+
+.appSmall {
+  font-size: 0.6rem;
+  opacity: 0.7;
+}
+
+.appName {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* Links Section */
+.linksSection {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .linksSection {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.linkGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.linkTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #FF6B6B;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.linkList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.link {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.link:hover {
+  color: #FF6B6B;
+  transform: translateX(5px);
+}
+
+/* Contact Section */
+.contactSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contactTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #FF6B6B;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.contactItem:hover {
+  color: #FF6B6B;
+}
+
+.contactIcon {
+  font-size: 1.1rem;
+  min-width: 20px;
+}
+
+/* Newsletter */
+.newsletter {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 1.5rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 107, 107, 0.1);
+}
+
+.newsletterTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  margin: 0 0 0.5rem;
+}
+
+.newsletterText {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0 0 1rem;
+}
+
+.newsletterForm {
+  display: flex;
+  gap: 0.5rem;
+}
+
+@media (max-width: 480px) {
+  .newsletterForm {
+    flex-direction: column;
+  }
+}
+
+.newsletterInput {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: white;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.newsletterInput:focus {
+  outline: none;
+  border-color: #FF6B6B;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.newsletterInput::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.newsletterBtn {
+  padding: 0.75rem 1.5rem;
+  background: #FF6B6B;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.newsletterBtn:hover {
+  background: #FF8E8E;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+}
+
+.newsletterNote {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0.75rem 0 0;
+}
+
+/* ============= PARTNERS STRIP ============= */
+.partnersStrip {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 1.5rem 0;
+  border-top: 1px solid rgba(255, 107, 107, 0.1);
+  border-bottom: 1px solid rgba(255, 107, 107, 0.1);
+}
+
+.partnersContent {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .partnersContent {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
+
+.partnersLabel {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.partnersGrid {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  width: 100%;
+}
+
+.partnerItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.partnerItem:hover {
+  background: rgba(255, 107, 107, 0.1);
+  border-color: rgba(255, 107, 107, 0.3);
+  transform: translateY(-2px);
+}
+
+.partnerLogo {
+  font-size: 1.2rem;
+}
+
+.partnerName {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+}
+
+/* ============= BOTTOM BAR ============= */
+.bottomBar {
+  padding: 1.5rem 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.bottomContent {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+  flex: 1;
+}
+
+
+@media (max-width: 768px) {
+  .bottomContent {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.copyright {
+  margin: 0;
+}
+
+.regulated {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+}
+
+.regulatedIcon {
+  font-size: 1rem;
+}
+
+.bottomLinks {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.bottomLink {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.bottomLink:hover {
+  color: #FF6B6B;
+}
+
+.separator {
+  opacity: 0.3;
+}
+
+/* ============= FLOATING TRUST BADGE ============= */
+.trustBadge {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  z-index: 100;
+  animation: slideInLeft 0.5s ease 1s both;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.trustBadgeContent {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  background: white;
+  border-radius: 60px;
+  box-shadow: 0 10px 30px rgba(255, 107, 107, 0.2);
+  border: 2px solid #FF6B6B;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.trustBadgeContent:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px rgba(255, 107, 107, 0.3);
+}
+
+.trustBadgeIcon {
+  font-size: 1.5rem;
+  background: rgba(255, 107, 107, 0.1);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.trustBadgeText {
+  display: flex;
+  flex-direction: column;
+}
+
+.trustBadgeText strong {
+  font-size: 0.9rem;
+  color: #1A1F36;
+}
+
+.trustBadgeText span {
+  font-size: 0.75rem;
+  color: #4A5568;
+}
+
+/* ============= BACK TO TOP ============= */
+.backToTop {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 50px;
+  height: 50px;
+  background: #FF6B6B;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 100;
+  box-shadow: 0 5px 20px rgba(255, 107, 107, 0.3);
+  animation: slideInRight 0.5s ease 1s both;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.backToTop:hover {
+  background: #FF8E8E;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(255, 107, 107, 0.4);
+}
+
+.backToTopIcon {
+  transition: transform 0.3s ease;
+}
+
+.backToTop:hover .backToTopIcon {
+  transform: translateY(-3px);
+}
+
+/* ============= RESPONSIVE ============= */
+@media (max-width: 768px) {
+  .mainFooter {
+    padding: 3rem 0 2rem;
+  }
+  
+  .container {
+    padding: 0 1.5rem;
+  }
+  
+  .brandDescription {
+    max-width: 100%;
+  }
+  
+  .trustBadge {
+    bottom: 1rem;
+    left: 1rem;
+  }
+  
+  .backToTop {
+    bottom: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+  
+  .trustBadgeContent {
+    padding: 0.5rem 1rem;
+  }
+  
+  .trustBadgeIcon {
+    width: 30px;
+    height: 30px;
+    font-size: 1.2rem;
+  }
+  
+  .trustBadgeText strong {
+    font-size: 0.8rem;
+  }
+  
+  .trustBadgeText span {
+    font-size: 0.7rem;
+  }
+}
+
+/* ============= PRINT STYLES ============= */
+@media print {
+  .footer {
+    display: none;
+  }
+}
+
+/* ============= REDUCED MOTION ============= */
+@media (prefers-reduced-motion: reduce) {
+  .logo,
+  .socialLink,
+  .appBadge,
+  .link,
+  .partnerItem,
+  .trustBadge,
+  .backToTop,
+  .trustBadgeContent {
+    animation: none !important;
+    transition: none !important;
+  }
+}
